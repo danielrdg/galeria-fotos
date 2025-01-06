@@ -10,8 +10,10 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
-  const handleSearch = () => {
-    onSearch(query);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setQuery(value);
+    onSearch(value); // Chama a função de busca em tempo real
   };
 
   return (
@@ -22,11 +24,10 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
           type="text"
           placeholder="Pesquisar fotos..."
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleInputChange}
           className="border border-gray-300 rounded-lg p-2 w-2/3 sm:w-1/2 text-gray-800 placeholder-gray-500"
         />
         <button
-          onClick={handleSearch}
           className="ml-2 bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
         >
           <FaSearch />
