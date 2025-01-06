@@ -5,17 +5,27 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import PhotoCard from "./components/PhotoCard";
 import { fetchPhotos } from "./data/photos";
-import { Photo } from "./types/photo";
+import { useDebounce } from "./hooks/useDebounce";
+
+interface Photo {
+  id: string;
+  alt_description: string | null;
+  urls: {
+    small: string;
+  };
+}
 
 export default function Home() {
-  const [photos, setPhotos] = useState<Photo[]>([]); // Define o estado tipado com Photo[]
-  const [query, setQuery] = useState(""); // Valor do input de busca
-  const [loading, setLoading] = useState(false); // Estado de carregamento
+  const [photos, setPhotos] = useState<Photo[]>([]);
+  const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const debouncedQuery = useDebounce(query, 300); 
 
   const loadPhotos = async (searchQuery: string = "nature") => {
     setLoading(true);
     try {
-      const results = await fetchPhotos(searchQuery); // Busca fotos da API
+      const results = await fetchPhotos(searchQuery);
       setPhotos(results);
     } catch (error) {
       console.error("Erro ao carregar fotos:", error);
@@ -25,8 +35,10 @@ export default function Home() {
   };
 
   useEffect(() => {
-    loadPhotos(); // Carrega fotos iniciais ao montar o componente
-  }, []);
+    if (debouncedQuery) {
+      loadPhotos(debouncedQuery); 
+    }
+  }, [debouncedQuery]);
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
