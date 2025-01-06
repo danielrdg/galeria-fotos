@@ -19,22 +19,22 @@ export default function Home() {
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false); // Estado para erro
+  const [error, setError] = useState(false); 
 
   const debouncedQuery = useDebounce(query, 300);
 
   const loadPhotos = async (searchQuery: string = "nature") => {
     setLoading(true);
-    setError(false); // Reseta o erro ao iniciar uma nova busca
+    setError(false); 
     try {
       const results = await fetchPhotos(searchQuery);
       if (results.length === 0) {
-        setError(true); // Define erro se não houver resultados
+        setError(true); 
       }
       setPhotos(results);
     } catch (error) {
       console.error("Erro ao carregar fotos:", error);
-      setError(true); // Define erro em caso de falha na API
+      setError(true); 
     } finally {
       setLoading(false);
     }
@@ -44,8 +44,7 @@ export default function Home() {
     if (debouncedQuery) {
       loadPhotos(debouncedQuery);
     } else {
-      setPhotos([]); // Limpa as fotos se a barra de pesquisa estiver vazia
-      setError(false); // Remove a mensagem de erro
+      setError(false);
     }
   }, [debouncedQuery]);
 
