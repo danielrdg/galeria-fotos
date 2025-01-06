@@ -1,0 +1,10 @@
+/* globals.css */
+body {
+    @apply bg-gray-100 text-gray-800; /* Fundo claro, texto escuro */
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-900; /* Títulos mais visíveis */
+  }
+  
