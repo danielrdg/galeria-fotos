@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
-    onSearch(value); // Chama a função de busca em tempo real
+    onSearch(value); 
   };
 
   return (
