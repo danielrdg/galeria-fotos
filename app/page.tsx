@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <div
       className="flex flex-col min-h-screen bg-gray-100"
-      style={{ fontFamily: "Comic Sans MS, Comic Sans, cursive" }}
+      style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
     >
       <Header onSearch={(searchQuery) => setQuery(searchQuery)} />
       <main className="flex-1 bg-gray-100 p-8">
