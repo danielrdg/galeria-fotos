@@ -57,9 +57,13 @@ export default function Home() {
       <Header onSearch={(searchQuery) => setQuery(searchQuery)} />
       <main className="flex-1 bg-gray-100 p-8">
         {loading ? (
-          <p className="text-gray-700 text-center lowercase">carregando fotos...</p>
+          <p className="text-gray-700 text-center lowercase">
+            carregando fotos...
+          </p>
         ) : error ? (
-          <p className="text-gray-700 text-center lowercase">nenhuma foto encontrada.</p>
+          <p className="text-gray-700 text-center lowercase">
+            nenhuma foto encontrada.
+          </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {photos.map((photo) => (

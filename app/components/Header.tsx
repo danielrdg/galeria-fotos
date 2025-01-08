@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
 
   const handleSearchClick = () => {
     setClicked(true);
-    setTimeout(() => setClicked(false), 300); 
+    setTimeout(() => setClicked(false), 300);
   };
 
   return (
@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
             color: "#FFE066",
           }}
         >
-          o que você quer ver hoje? 
+          o que você quer ver hoje?
         </p>
       )}
     </header>
