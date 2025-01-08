@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
     <header className="text-center py-6 bg-[#6D4C91] shadow-md">
       <h1
         className="text-4xl font-bold text-white"
-        style={{ fontFamily: "'Comic Sans MS', Comic Sans, cursive" }}
+        style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
       >
         Galeria de Fotos
       </h1>
@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
         <div className="flex w-2/3 sm:w-1/2">
           <input
             type="text"
-            style={{ fontFamily: "'Comic Sans MS', Comic Sans, cursive" }}
+            style={{ fontFamily: "Helvetica, Arial, sans-serif" }}
             placeholder="pesquisar fotos..."
             value={query}
             onChange={handleInputChange}
@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
         <p
           className="mt-4 text-gray-100 text-lg"
           style={{
-            fontFamily: "'Comic Sans MS', Comic Sans, cursive",
+            fontFamily: "Helvetica, Arial, sans-serif",
             color: "#FFE066",
           }}
         >

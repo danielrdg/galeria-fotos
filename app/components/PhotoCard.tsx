@@ -29,7 +29,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ title, src }) => {
           <h2
             className="text-center text-lg lowercase"
             style={{
-              fontFamily: "Comic Sans MS, Comic Sans, cursive",
+              fontFamily: "Helvetica, Arial, sans-serif",
               color: "#6D4C91",
             }}
           >
@@ -50,7 +50,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ title, src }) => {
               onClick={closeModal}
               className="absolute top-2 right-2 bg-white text-black rounded-full px-3 py-1 text-sm"
               style={{
-                fontFamily: "Comic Sans MS, Comic Sans, cursive",
+                fontFamily: "Helvetica, Arial, sans-serif",
               }}
             >
               fechar
