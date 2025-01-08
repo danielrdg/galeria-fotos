@@ -11,11 +11,11 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ title, src }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleImageClick = () => {
-    setModalOpen(true); 
+    setModalOpen(true);
   };
 
   const closeModal = () => {
-    setModalOpen(false); 
+    setModalOpen(false);
   };
 
   return (
@@ -50,7 +50,7 @@ const PhotoCard: React.FC<PhotoCardProps> = ({ title, src }) => {
               onClick={closeModal}
               className="absolute top-2 right-2 bg-white text-black rounded-full px-3 py-1 text-sm"
               style={{
-                fontFamily: "Comic Sans MS, Comic Sans, cursive", 
+                fontFamily: "Comic Sans MS, Comic Sans, cursive",
               }}
             >
               fechar
